@@ -1,0 +1,12 @@
+1. 创建单文档CFormView项目
+2. 新建一个类，类的类型选择Generic Class，填写名称为CMySplitter，基类我们填CSplitterWnd
+3. 在CMainFrame类中声明两个public的CMySplitter型的成员变量: m_SplitterV, m_SplitterH
+4. 创建下面四个，IDD_MONITORRIGHT_FORM MFC Class CMonitorRightView可能用不上。
+	1. IDD_MONITORLEFT_FORM MFC Class CMonitorLeftView
+	2. IDD_MONITORRIGHT_FORM MFC Class CMonitorRightView
+	3. IDD_MONITORRTOP_FORM MFC Class CMonitorRTopView
+	4. IDD_MONITORRBOTTOM_FORM MFC Class CMonitorRBOTTOMView
+5. override OnCreateClient in CFrameWnd
+6. add CMonitorLeftView::OnSize
+7. add CMonitorLeftView's member:  CTabCtrl
+8. OnInitialUpdate 注意这个函数和 m_TabCtrl.Create(TCS_TABS|WS_CHILD|WS_VISIBLE,rec,this,IDC_TABCTRL);  IDC_TABCTRL需要在字符串表中加上
